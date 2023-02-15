@@ -1,1 +1,36 @@
-<p>order works!</p>
+<mat-card class="order-card">
+    <mat-card-title *ngIf="userLoggedIn$ | async">Order a pizza</mat-card-title>
+    <form *ngIf="userLoggedIn$ | async" [formGroup]="orderForm" (ngSubmit)="onSubmitOrder()">
+        <mat-form-field appearance="fill">
+            <mat-label>Crust</mat-label>
+            <input matInput [formControl]="crust" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Flavor</mat-label>
+            <input matInput [formControl]="flavor" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Size</mat-label>
+            <input matInput [formControl]="size" required>
+        </mat-form-field>
+        <!-- <mat-form-field appearance="fill">
+            <mat-label>Table Number</mat-label>
+            <mat-select [formControl]="tableNum" required>
+                <mat-option matInput *ngFor="let tableNumber of tableNumbers" [value]="tableNumber">{{ tableNumber }}</mat-option>
+            </mat-select>
+        </mat-form-field> -->
+        <mat-form-field appearance="fill">
+            <mat-label>Table Number</mat-label>
+            <input matInput [formControl]="tableNum" type="number" min="1" max="10" required>
+        </mat-form-field>
+        <mat-error class="mdc-theme--primary" *ngIf="orderErrorMessage">{{ orderErrorMessage }}</mat-error>
+        <button mat-raised-button type="submit"
+            [disabled]="!orderForm.valid">Place order</button>
+    </form>
+    <div *ngIf="!(userLoggedIn$ | async)" class="welcome">
+        <mat-card-title>Please login</mat-card-title>
+        <mat-card-actions>
+            <button mat-raised-button routerLink="../login">Login</button>
+        </mat-card-actions>
+    </div>
+</mat-card>

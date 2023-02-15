@@ -7,7 +7,9 @@ import { NavbarModule } from './navbar/navbar.module';
 import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { OrderModule } from './order/order.module';
+import { AuthInterceptor } from './core/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,11 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarModule,
     HomeModule,
     LoginModule,
+    OrderModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

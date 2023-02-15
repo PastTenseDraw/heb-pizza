@@ -18,9 +18,13 @@ export class LoginComponent {
     username: this.username,
     password: this.password,
   });
-  public userLoggedIn$: Observable<boolean> = this.service.auth_token$.pipe(map(token => !!token));
+  public userLoggedIn$: Observable<boolean> = this.service.authToken$.pipe(map(token => !!token));
 
-  constructor(private formBuilder: FormBuilder, private service: LoginService, private coreService: CoreService) { }
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly service: LoginService,
+    private readonly coreService: CoreService,
+  ) { }
 
   public logout(): void {
     this.service.logout();
@@ -28,14 +32,14 @@ export class LoginComponent {
 
   public onSubmitLogin(): void {
     this.service.submitLogin(this.username.value || '', this.password.value || '').subscribe({
-      next: (response) => {
+      next: response => {
         console.log('Success!', response);
         this.loginErrorMessage = null;
       },
-      error: (error) => {
+      error: error => {
         console.log('Failure!', error);
         this.loginErrorMessage = error;
-      }
+      },
     });
   }
 

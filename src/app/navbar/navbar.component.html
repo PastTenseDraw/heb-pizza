@@ -5,7 +5,7 @@
         </a>
         <div class="spacer"></div>
         <a mat-button routerLink="/login" class="mdc-theme--on-primary">
-            <span>Login</span>
+            <span>{{ (loggedIn$ | async) ? 'Logout' : 'Login' }}</span>
         </a>
     </mat-toolbar-row>
 </mat-toolbar>

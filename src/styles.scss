@@ -9,7 +9,7 @@
     body {
         margin: 0;
         background-color: var(--mdc-theme-background);
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Heebo", sans-serif;
     }
     .spacer {
         flex: 1 1 auto;
@@ -38,4 +38,14 @@
     .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
         height: 3em;
     }
+
+    .mat-mdc-card-title {
+        font-size: 2em;
+    }
+
+    .mat-mdc-raised-button:not(:disabled) {
+        background-color: var(--mdc-theme-secondary);
+    }
+
+    --mdc-typography-font-family: "Heebo";
 }

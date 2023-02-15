@@ -6,4 +6,13 @@ export declare namespace AppI {
     export interface LoginResponse {
         access_token: string;
     }
+
+    export interface OrderResponse {
+        Crust: string;
+        Flavor: string;
+        Order_ID: number;
+        Size: string;
+        Table_No: number;
+        Timestamp: string;
+    }
 }
