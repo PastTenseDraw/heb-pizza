@@ -1,0 +1,19 @@
+<div class="dialog-content-container" *ngIf="!deleteMessage">
+    <h1 mat-dialog-title>Order placed</h1>
+    <div mat-dialog-content>
+        <p>Your order was successfully placed. Your order number is {{ data }}</p>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button (click)="cancelOrder()" class="mdc-theme--primary-bg">Cancel Order</button>
+        <button mat-raised-button (click)="closeDialog()" cdkFocusInitial>OK</button>
+    </div>
+</div>
+<div class="dialog-content-container" *ngIf="deleteMessage">
+    <h1 mat-dialog-title>Order deleted</h1>
+    <div mat-dialog-content>
+        <p>Your order (#{{data}}) was successfully deleted.</p>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button (click)="closeDialog()" cdkFocusInitial>OK</button>
+    </div>
+</div>

@@ -5,6 +5,7 @@
     $background: #fcf5eb
 );
 @use "material-components-web";
+@import '@angular/cdk/overlay-prebuilt.css';
 :root {
     body {
         margin: 0;
@@ -45,6 +46,16 @@
 
     .mat-mdc-raised-button:not(:disabled) {
         background-color: var(--mdc-theme-secondary);
+    }
+
+    .mat-mdc-dialog-container .mdc-dialog__title {
+        font-family: 'Paytone One';
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    .mat-mdc-dialog-container .mdc-dailog__content {
+        font-family: 'Heebo';
     }
 
     --mdc-typography-font-family: "Heebo";

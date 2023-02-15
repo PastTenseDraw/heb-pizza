@@ -15,4 +15,8 @@ export declare namespace AppI {
         Table_No: number;
         Timestamp: string;
     }
+
+    export interface DeleteResponse {
+        message: string;
+    }
 }

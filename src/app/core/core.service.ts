@@ -12,7 +12,13 @@ const RETRY_COUNT = 3;
 export class CoreService {
 
 
-  constructor(private readonly http: HttpClient, private router: Router) { }
+  constructor(private readonly http: HttpClient, private readonly router: Router) { }
+
+  public delete<T>(link: string): Observable<T> {
+    return this.http.delete<T>(link).pipe(
+      retry(RETRY_COUNT),
+    );
+  }
 
   public get<T>(link: string, params: AppI.KeyValuePairs): Observable<T> {
     return this.http.get<T>(link, { params: { ...params }}).pipe(
