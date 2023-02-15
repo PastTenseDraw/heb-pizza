@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './navbar.component';
-import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatButtonModule } from '@angular/material/button';
+import { HomeComponent } from './home.component';
+import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
-  declarations: [ NavbarComponent ],
-  exports: [ NavbarComponent ],
+  declarations: [ HomeComponent ],
+  exports: [ HomeComponent ],
   imports: [
     CommonModule,
-    MatToolbarModule,
     MatButtonModule,
-    RouterModule
+    MatCardModule,
+    RouterModule,
   ],
 })
-export class NavbarModule { }
+export class HomeModule { }

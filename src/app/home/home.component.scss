@@ -1,0 +1,13 @@
+.action-card-holder {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 2vh 2vw;
+}
+
+.action-card {
+    width: 50%;
+    float: left;
+    margin: 1vh 1vw;
+    padding: 2vh 2vw;
+}
