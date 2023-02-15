@@ -20,7 +20,7 @@ export class CoreService {
     );
   }
 
-  public get<T>(link: string, params: AppI.KeyValuePairs): Observable<T> {
+  public get<T>(link: string, params?: AppI.KeyValuePairs): Observable<T> {
     return this.http.get<T>(link, { params: { ...params }}).pipe(
       retry(RETRY_COUNT),
     );

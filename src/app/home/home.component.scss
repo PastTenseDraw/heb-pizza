@@ -6,8 +6,68 @@
 }
 
 .action-card {
-    width: 50%;
+    width: 48%;
     float: left;
     margin: 1vh 1vw;
-    padding: 2vh 2vw;
+    background-color: white;
 }
+
+.single-pizza-header-image {
+    background-image: url("https://material.angular.io/assets/img/examples/shiba2.jpg");
+    background-size: cover;
+}
+
+.mdc-card__media {
+    max-height: 35vh;;
+    height: 35vw;
+    object-fit: cover;
+}
+
+.mdc-card__actions {
+    padding: 4vh 0;
+    margin: 0 auto;
+}
+
+.welcome-image {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    max-height: 40vh;
+    height: 30vw;
+    background-size: cover;
+    background-position: 50% 40%;
+    background-image: url('https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg');
+}
+
+.welcome-text {
+    color: white;
+    font-family: 'Paytone One';
+    font-size: 2em;
+    z-index: 2;  
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, calc(min(40vh, 30vw) / -2 - .5em));
+    text-align: center;
+    margin-block: 0;
+    margin-inline: 0;
+    width: 100%
+}
+
+@media (max-width: 400px) {
+    .welcome-text {
+      font-size: 1em;
+    }
+  }
+
+@media (max-width: 600px) and (min-width: 400px) {
+    .welcome-text {
+      font-size: 2em;
+    }
+  }
+
+  @media (min-width: 600px) {
+    .welcome-text {
+      font-size: 3em;
+    }
+  }

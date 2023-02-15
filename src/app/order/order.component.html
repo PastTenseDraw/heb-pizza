@@ -28,7 +28,7 @@
             [disabled]="!orderForm.valid">Place order</button>
     </form>
     <div *ngIf="!(userLoggedIn$ | async)" class="welcome">
-        <mat-card-title>Please login</mat-card-title>
+        <mat-card-title>Please login before attempting to order</mat-card-title>
         <mat-card-actions>
             <button mat-raised-button routerLink="../login">Login</button>
         </mat-card-actions>

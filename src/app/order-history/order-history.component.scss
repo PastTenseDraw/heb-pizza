@@ -1,0 +1,47 @@
+.mat-mdc-table {
+    background-color: white;
+    padding: 0 2vw;
+    width: 96%;
+    padding-bottom: 4vh;;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 96%;
+  }
+
+.mat-mdc-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2vh 2vw;
+    margin: 7vh 15vw;
+    background-color: white;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    background-color: white;
+}
+
+mat-form-field {
+    padding: 1vh 2vw;
+    background-color: white;
+}
+
+button {
+    width: 15%;
+    margin: 0 auto;
+}
+
+mat-error, mat-card-title {
+    margin: 1vh auto;
+}
+
+h1 {
+    background-color: white;
+    width: 100%;
+    padding: 2vh 2vw;
+    margin: 0;
+}

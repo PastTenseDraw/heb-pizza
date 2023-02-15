@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { OrderHistoryModule } from './order-history/order-history.module';
+import { OrderHistoryResolver } from './order-history/order-history.resolver';
 import { OrderComponent } from './order/order.component';
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   {
     path: 'order-history',
     component: OrderHistoryComponent,
+    resolve: { data: OrderHistoryResolver }
     //loadChildren: () => import('./order-history/order-history.module').then(module => OrderHistoryModule),
   },
   {

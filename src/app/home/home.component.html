@@ -1,12 +1,27 @@
+<div style="overflow: hidden;">
+    <div class="welcome-image">
+    </div>
+    <h1 class="welcome-text">Welcome to Drew's Pizza!</h1>
+</div>
 <div class="action-card-holder">
     <mat-card class="action-card" id="order-card">
-        <a mat-raised-button routerLink="../order">
-            <span>Order a pizza</span>
-        </a>
+        <img mat-card-image
+            src="https://cdn.sanity.io/images/w6ol9cun/production/0fbc5d588c01b4ca1b712061daf2d802154c7ca5-2000x1080.jpg?fm=webp"
+            alt="Photo of pizza">
+        <mat-card-actions>
+            <a mat-raised-button routerLink="../order">
+                <span>Order a pizza</span>
+            </a>
+        </mat-card-actions>
     </mat-card>
     <mat-card class="action-card" id="order-history-card">
-        <a mat-raised-button routerLink="../order-history">
-            <span>View your orders</span>
-        </a>
+        <img mat-card-image
+            src="https://www.specialevents.com/sites/specialevents.com/files/styles/article_featured_retina/public/Two_Pizzas_1.jpg?itok=SHsS-104"
+            alt="Photo of multiple pizzas">
+        <mat-card-actions>
+            <a mat-raised-button routerLink="../order-history">
+                <span>View your orders</span>
+            </a>
+        </mat-card-actions>
     </mat-card>
 </div>
