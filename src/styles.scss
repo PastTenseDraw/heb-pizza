@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @use "@material/theme" with (
-  $primary: #d94316,
-  $secondary: #e9b44c,
-  $background: #fcf5eb,
+    $primary: #d94316,
+    $secondary: #e9b44c,
+    $background: #fcf5eb
 );
 @use "material-components-web";
 :root {
     body {
         margin: 0;
+        background-color: var(--mdc-theme-background);
+        font-family: 'Montserrat', sans-serif;
     }
     .spacer {
         flex: 1 1 auto;
@@ -31,4 +33,9 @@
     --bg-color: var(--primary);
     --text-color: var(--text);
     --button-color: var(--secondary);
+
+    // Fixing problem with input height sizing
+    .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+        height: 3em;
+    }
 }

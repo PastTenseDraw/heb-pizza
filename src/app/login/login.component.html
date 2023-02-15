@@ -1,0 +1,23 @@
+<mat-card class="login-card">
+    <form *ngIf="!(userLoggedIn$ | async)" [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput [formControl]="username" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [formControl]="password" required>
+        </mat-form-field>
+        <mat-error class="mdc-theme--primary" *ngIf="loginErrorMessage">{{ loginErrorMessage }}</mat-error>
+        <button mat-raised-button class="mdc-theme--secondary-bg" type="submit"
+            [disabled]="!loginForm.valid">Login</button>
+    </form>
+    <div *ngIf="userLoggedIn$ | async" class="welcome">
+        <mat-card-title>Welcome, customer!</mat-card-title>
+        <mat-card-actions>
+            <button mat-raised-button class="mdc-theme--secondary-bg" routerLink="../home">Go home</button>
+            <button mat-raised-button class="mdc-theme--primary-bg mdc-theme--on-primary"
+                (click)="logout()">Logout</button>
+        </mat-card-actions>
+    </div>
+</mat-card>
