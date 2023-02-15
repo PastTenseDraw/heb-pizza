@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@material/theme" with (
+  $primary: #d94316,
+  $secondary: #e9b44c,
+  $background: #fcf5eb,
+);
+@use "material-components-web";
+:root {
+    body {
+        margin: 0;
+    }
+    .spacer {
+        flex: 1 1 auto;
+    }
+    // Main color palette
+    --red-orange: #d94316;
+    --off-yellow: #e9b44c;
+    --royal-blue: #2f6690;
+    --light-blue: #7a9cc6;
+    --powder-blue: #9fbbcc;
+    --off-white: #fcf5eb;
+
+    // var assignment for color palette;
+    --primary: var(--red-orange);
+    --secondary: var(--off-yellow);
+    --tertiary: var(--royal-blue);
+    --primary-accent: var(--light-blue);
+    --secondary-accent: var(--powder-blue);
+    --text: var(--off-white);
+
+    --bg-color: var(--primary);
+    --text-color: var(--text);
+    --button-color: var(--secondary);
+}

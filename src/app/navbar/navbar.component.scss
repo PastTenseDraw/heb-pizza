@@ -1,0 +1,21 @@
+@import 'src/styles.scss';
+
+.mat-toolbar-row {
+    box-sizing: border-box;
+    display: flex;
+    padding: 0 16px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mat-button {
+    font-size: 1.5em;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.home-button {
+    font-family: 'Paytone One',sans-serif;
+    font-size: 3em;
+    margin: .3em 0;
+}
