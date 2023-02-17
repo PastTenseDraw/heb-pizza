@@ -6,7 +6,8 @@
     "start": "ng serve --public-host localhost:4200",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prod": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {
