@@ -41,10 +41,6 @@ export class OrderComponent {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
       data: orderNum,
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 
   public onSubmitOrder(): void {
@@ -52,7 +48,7 @@ export class OrderComponent {
       next: completedOrder => {
         this.openDialog(completedOrder.Order_ID);
       },
-      error: error => console.log(error),
+      error: error => console.warn(error),
     });
   }
 }

@@ -33,11 +33,9 @@ export class LoginComponent {
   public onSubmitLogin(): void {
     this.service.submitLogin(this.username.value || '', this.password.value || '').subscribe({
       next: response => {
-        console.log('Success!', response);
         this.loginErrorMessage = null;
       },
       error: error => {
-        console.log('Failure!', error);
         this.loginErrorMessage = error;
       },
     });

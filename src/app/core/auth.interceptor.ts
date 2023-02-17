@@ -15,13 +15,11 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log(request);
     const httpRequest = request.clone({
       headers: new HttpHeaders({
         'Authorization': `Bearer ${sessionStorage.getItem(AUTH_TOKEN_KEY)}`,
       }),
     });
-    console.log(httpRequest);
     return next.handle(httpRequest);
   }
 }

@@ -25,7 +25,6 @@ export class OrderHistoryComponent implements OnInit {
 
   public ngOnInit(): void {
     this.service.orderList$.subscribe(ordersList => {
-      console.log(ordersList);
       this.source.data = ordersList;
     });
   }

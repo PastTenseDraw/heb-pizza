@@ -20,10 +20,5 @@ export class OrderHistoryService {
       map(() => null),
       catchError(error => throwError(() => 'Failed to fetch orders!' + error)),
     );
-
-    // .subscribe({
-    //   next: orders => this.orderListSubject.next(orders),
-    //   error: error => console.warn('Failed to fetch orders!', error),
-    // });
   }
 }

@@ -13,7 +13,6 @@ export class OrderService {
 
   public cancelOrder(orderNum: number): Observable<AppI.DeleteResponse> {
     return this.coreService.delete<AppI.DeleteResponse>(orderIdLink(orderNum)).pipe(
-      tap(res => console.log(res)),
       catchError(error => {
         console.warn(error);
         return throwError(() => new Error('Failed to delete order!'));
@@ -25,7 +24,6 @@ export class OrderService {
     const { crust, flavor, size, tableNum} = order;
     const body = { Crust: crust, Flavor: flavor, Size: size, Table_No: tableNum };
     return this.coreService.post<AppI.OrderResponse>(orderLink, body).pipe(
-      tap(res => console.log(res)),
       catchError(error => {
         console.warn(error);
         return throwError(() => new Error('Failed to place order!'));

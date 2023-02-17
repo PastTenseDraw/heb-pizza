@@ -18,8 +18,6 @@ export class LoginService {
   }
 
   constructor(private readonly coreService: CoreService) {
-    console.log('setting token');
-    console.log(sessionStorage.getItem(AUTH_TOKEN_KEY))
     this.tokenSubject.next(sessionStorage.getItem(AUTH_TOKEN_KEY));
    }
 
@@ -31,7 +29,6 @@ export class LoginService {
   public submitLogin(username: string, password: string): Observable<AppI.LoginResponse> {
     const body = { username, password };
     return this.coreService.post<AppI.LoginResponse>(loginLink, body).pipe(
-      tap(res => console.log(res)),
       tap(({ access_token }) => {
         this.tokenSubject.next(access_token);
         sessionStorage.setItem(AUTH_TOKEN_KEY, access_token);

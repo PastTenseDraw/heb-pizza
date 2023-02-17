@@ -19,7 +19,10 @@ export class ConfirmationDialogComponent {
   public cancelOrder(): void {
     this.service.cancelOrder(this.data).subscribe({
       next: ({ message }) => this.deleteMessage = message,
-      error: error => console.log(error),
+      error: error => {
+        console.warn(error);
+        this.deleteMessage = 'Failed to delete due to the following error: ' + error;
+      },
     });
   }
 
