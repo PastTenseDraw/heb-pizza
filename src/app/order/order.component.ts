@@ -44,10 +44,13 @@ export class OrderComponent {
   }
 
   public onSubmitOrder(): void {
+    // Submit order and provide feedback for success
     this.service.submitOrder(this.orderForm.getRawValue()).subscribe({
       next: completedOrder => {
         this.openDialog(completedOrder.Order_ID);
       },
+
+      // TODO: Provide error dialog rather than console warning once error dialog templatized more
       error: error => console.warn(error),
     });
   }

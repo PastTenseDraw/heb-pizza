@@ -12,6 +12,7 @@ export class OrderService {
   constructor(private readonly coreService: CoreService) { }
 
   public cancelOrder(orderNum: number): Observable<AppI.DeleteResponse> {
+    // Provide a cancellation for an order, show message if cancellation fails
     return this.coreService.delete<AppI.DeleteResponse>(orderIdLink(orderNum)).pipe(
       catchError(error => {
         console.warn(error);
@@ -21,6 +22,7 @@ export class OrderService {
   }
 
   public submitOrder(order: { crust: string, flavor: string, size: string, tableNum: number }): Observable<AppI.OrderResponse> {
+    // Package and format properties of our order payload, send to API, throw an error if not successful
     const { crust, flavor, size, tableNum} = order;
     const body = { Crust: crust, Flavor: flavor, Size: size, Table_No: tableNum };
     return this.coreService.post<AppI.OrderResponse>(orderLink, body).pipe(

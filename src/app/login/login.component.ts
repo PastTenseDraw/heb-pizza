@@ -31,6 +31,7 @@ export class LoginComponent {
   }
 
   public onSubmitLogin(): void {
+    // Calls login, provides message for failures
     this.service.submitLogin(this.username.value || '', this.password.value || '').subscribe({
       next: response => {
         this.loginErrorMessage = null;

@@ -54,6 +54,10 @@
     width: 100%
 }
 
+.blur-img-container {
+    overflow: hidden;
+}
+
 @media (max-width: 400px) {
     .welcome-text {
       font-size: 1em;

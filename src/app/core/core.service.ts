@@ -14,6 +14,8 @@ export class CoreService {
 
   constructor(private readonly http: HttpClient, private readonly router: Router) { }
 
+  // Providing baked-in retry for our API handling
+
   public delete<T>(link: string): Observable<T> {
     return this.http.delete<T>(link).pipe(
       retry(RETRY_COUNT),
@@ -26,6 +28,8 @@ export class CoreService {
     );
   }
 
+  // Navigation also included out of habit. Normally useful for adding navigation extras,
+  // but proved unnecessary here. Leaving method for hypothetical reuse later
   public navigate(url: string[]): Promise<boolean> {
     return this.router.navigate(url);
   }

@@ -16,6 +16,9 @@ export class ConfirmationDialogComponent {
     private service: OrderService,
   ) {}
 
+  // Building this dialog solely for cancellation flow, just as a small demo
+  // In a production app expected to grow, this dialog would be templatized and
+  // reusable for the entire app using a content interface, but kept it small for time
   public cancelOrder(): void {
     this.service.cancelOrder(this.data).subscribe({
       next: ({ message }) => this.deleteMessage = message,
